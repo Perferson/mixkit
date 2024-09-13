@@ -1,0 +1,95 @@
+.resizer {
+  outline: 1px solid #000;
+  position: absolute;
+  background-color: #fff;
+
+  &.active {
+    outline-style: dashed;
+    cursor: move;
+  }
+}
+
+$resizer-handle-size: 7px;
+
+.resizer-handle {
+  width: $resizer-handle-size;
+  height: $resizer-handle-size;
+  position: absolute;
+  background: #f0f0f0;
+  border: 1px solid #333;
+  border-radius: 50%;
+
+  &-tl,
+  &-tm,
+  &-tr {
+    top: 0;
+  }
+
+  &-ml,
+  &-mr {
+    top: 50%;
+  }
+
+  &-bl,
+  &-bm,
+  &-br {
+    bottom: 0;
+  }
+
+  &-tl,
+  &-ml,
+  &-bl {
+    left: 0;
+  }
+
+  &-tm,
+  &-bm {
+    left: 50%;
+  }
+
+  &-tr,
+  &-mr,
+  &-br {
+    right: 0;
+  }
+
+  &-tl {
+    transform: translate(-50%, -50%);
+    cursor: nw-resize;
+  }
+
+  &-tm {
+    transform: translate(-50%, -50%);
+    cursor: n-resize;
+  }
+
+  &-tr {
+    transform: translate(50%, -50%);
+    cursor: ne-resize;
+  }
+
+  &-ml {
+    transform: translate(-50%, -50%);
+    cursor: w-resize;
+  }
+
+  &-mr {
+    transform: translate(50%, -50%);
+    cursor: e-resize;
+  }
+
+  &-bl {
+    transform: translate(-50%, 50%);
+    cursor: sw-resize;
+  }
+
+  &-bm {
+    transform: translate(-50%, 50%);
+    cursor: s-resize;
+  }
+
+  &-br {
+    transform: translate(50%, 50%);
+    cursor: se-resize;
+  }
+}
