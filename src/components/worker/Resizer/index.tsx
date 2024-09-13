@@ -87,7 +87,7 @@ const Resizer = defineComponent({
             const cols = Array.from(otherElementLines.values()).map(({ cols }) => cols).flat();
             const rows = Array.from(otherElementLines.values()).map(({ rows }) => rows).flat();
 
-            const matchedLine: ElementLines = {
+            const matchedLine: unknown = {
               rows: selfRows.map((row, index) => {
                 let match = null;
                 rows.forEach((line) => {
@@ -126,7 +126,7 @@ const Resizer = defineComponent({
               }).filter(i => i !== null),
             }
 
-            updateMatchedLines?.(matchedLine);
+            updateMatchedLines?.(matchedLine as ElementLines);
           }
         }
         Object.assign(style, {
